@@ -2,6 +2,8 @@ from cliente import Cliente
 from item import Item
 from pedido.pedido_retirada import PedidoRetirada
 from pedido.pedido_delivery import PedidoDelivery
+from pagamento.pagamento_pix import PagamentoPix
+from pagamento.pagamento_cartao import PagamentoCartao
 
 cliente = Cliente("Leonardo", "Rua 1")
 item_1 = Item("Computador", 5000.00)
@@ -13,4 +15,10 @@ taxa_entrega = 10.00
 pedido_retirada = PedidoRetirada(cliente, itens_pedido)
 pedido_delivery = PedidoDelivery(cliente, itens_pedido, taxa_entrega)
 
-print(f"Total: R$ {pedido_delivery.calcular_total():.2f}")
+
+valor_pedido = pedido_delivery.calcular_total()
+
+pagamento_cartao = PagamentoCartao().processar(valor_pedido)
+pagamento_pix = PagamentoPix()
+
+pagamento_pix.processar(valor_pedido)
