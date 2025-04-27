@@ -23,6 +23,6 @@ valor_pedido = pedido_delivery.calcular_total()
 # pagamento_pix = PagamentoPix()
 # pagamento_pix.processar(valor_pedido)
 
-tipo_pagamento = "cartao"
+tipo_pagamento = "pix"
 pagamento = PagamentoFactory.criar_pagamento(tipo_pagamento)
 pagamento.processar(valor_pedido)
