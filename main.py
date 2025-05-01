@@ -35,3 +35,5 @@ MENSAGEM = "Seu pedido foi realizado com sucesso"
 # notificacao_sms = NotificacaoSMS().enviar_notificacao(cliente, MENSAGEM)
 
 notificacoes = NotificacaoFacade().enviar_notificacoes(cliente, MENSAGEM)
+
+pedido_delivery.status = "Entregue!"
