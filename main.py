@@ -5,6 +5,8 @@ from pedido.pedido_delivery import PedidoDelivery
 from pagamento.pagamento_pix import PagamentoPix
 from pagamento.pagamento_cartao import PagamentoCartao
 from pagamento.pagamento_factory import PagamentoFactory
+from notificacao.notificacao_email import NotificacaoEmail
+from notificacao.notificacao_sms import NotificacaoSMS
 
 cliente = Cliente("Leonardo", "Rua 1")
 item_1 = Item("Computador", 5000.00)
@@ -26,3 +28,7 @@ valor_pedido = pedido_delivery.calcular_total()
 tipo_pagamento = "cartao"
 pagamento = PagamentoFactory.criar_pagamento(tipo_pagamento)
 pagamento.processar(valor_pedido)
+
+MENSAGEM = "Seu pedido foi realizado com sucesso"
+notificacao_email = NotificacaoEmail().enviar_notificacao(cliente, MENSAGEM)
+notificacao_sms = NotificacaoSMS().enviar_notificacao(cliente, MENSAGEM)
