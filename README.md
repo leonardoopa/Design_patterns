@@ -77,6 +77,4 @@ Este projeto implementa um sistema de gerenciamento de pedidos que simula um flu
 
 Projeto desenvolvido como estudo dos princípios **SOLID** e padrões de design para organização de software escalável e modular.
 
-Feito pela Escola de Programação da Alura!
-
 Fique à vontade para contribuir! 🎉
